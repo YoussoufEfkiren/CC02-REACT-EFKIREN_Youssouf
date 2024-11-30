@@ -22,7 +22,7 @@ const LivresEmpruntes = () => {
                 <td>{livre.auteur}</td>
                 <td>
                   <button
-                  style={{ backgroundColor: 'red', color: 'white' }}
+                  className="return"
                    onClick={() => returnLivre(livre.id)}>
                     Return
                   </button>

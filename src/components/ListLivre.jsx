@@ -1,13 +1,13 @@
-import  { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import FetchLivres from "../services/Api";
-import { useEmpruntContext } from "../context/EmpruntContext"; 
-import LivresEmpruntes from "./LivresEmpruntes"; 
+import { useEmpruntContext } from "../context/EmpruntContext";
+import LivresEmpruntes from "./LivresEmpruntes";
 
 const ListLivre = () => {
   const [livres, setLivres] = useState([]);
-  const { emprunts, EmpruntLivre, returnLivre } = useEmpruntContext(); 
-  const [showModal, setShowModal] = useState(false); 
-  const [borrowMessage, setBorrowMessage] = useState(""); 
+  const { emprunts, EmpruntLivre, returnLivre } = useEmpruntContext();
+  const [showModal, setShowModal] = useState(false);
+  const [borrowMessage, setBorrowMessage] = useState("");
 
   useEffect(() => {
     FetchLivres().then((data) => {
@@ -17,17 +17,16 @@ const ListLivre = () => {
 
   const handleBorrow = (id, livres) => {
     EmpruntLivre(id, livres);
-    setBorrowMessage("Book borrowed successfully!"); 
-    setShowModal(true); 
+    setBorrowMessage("Book borrowed successfully!");
+    setShowModal(true);
     setTimeout(() => {
-      setShowModal(false); 
+      setShowModal(false);
     }, 1000);
   };
 
   return (
     <div>
       <h1>List of Books</h1>
-
 
       {showModal && (
         <div
@@ -72,18 +71,19 @@ const ListLivre = () => {
                     <td>{livre.auteur}</td>
                     <td>{livre.disponible ? "Yes" : "No"}</td>
                     <td>
-                      {livre.disponible && !emprunts.some((b) => b.id === livre.id) && (
-                        <button
-                          style={{ backgroundColor: "green", color: "white" }}
-                          onClick={() => handleBorrow(livre.id, livres)}
-                        >
-                          Borrow
-                        </button>
-                      )}
+                      {livre.disponible &&
+                        !emprunts.some((b) => b.id === livre.id) && (
+                          <button
+                            className="borrow"
+                            onClick={() => handleBorrow(livre.id, livres)}
+                          >
+                            Borrow
+                          </button>
+                        )}
 
                       {emprunts.some((b) => b.id === livre.id) && (
                         <button
-                          style={{ backgroundColor: "red", color: "white" }}
+                          className="return"
                           onClick={() => returnLivre(livre.id)}
                         >
                           Return
