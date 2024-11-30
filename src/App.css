@@ -1,0 +1,118 @@
+
+.App {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+  }
+  
+
+  .tables-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+  }
+  
+  .table-container {
+    width: 48%;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    background-color: #f9f9f9;
+    transition: transform 0.3s ease;
+  }
+  
+
+  
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  
+  th {
+    background-color: #4CAF50; 
+    color: white;
+    padding: 12px;
+    text-align: left;
+    font-weight: 600;
+  }
+  
+  td {
+    padding: 12px;
+    border: 1px solid #ddd;
+    text-align: left;
+  }
+  
+  tr:hover {
+    background-color: #f1f1f1; 
+  }
+  
+
+  button.borrow {
+    background-color: #16a085; 
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+  }
+  
+ 
+
+ 
+  button.return {
+    background-color: #c0392b; 
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+  }
+
+  
+
+  /* Modal Styling (Pop-up) */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+  
+  .modal-content {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  }
+  
+  .modal-header {
+    background-color: #28a745; /* Green for modal header */
+    color: white;
+    padding: 12px;
+    font-size: 1.2rem;
+  }
+  
+  .modal-body p {
+    font-size: 1.2rem;
+    color: green;
+    font-weight: bold;
+  }
+  
+  .modal .btn-close {
+    background-color: #28a745;
+  }
+  
+  
